@@ -29,7 +29,7 @@ public class Main {
         Main main = new Main();
 
         //修改此处数据库名
-        String databaseName = "cczucampusforum";
+        String databaseName = "emalls";
         List<Result> results = main.getTableDetails(databaseName);
         XWPFDocument document = ew.createXWPFDocument(results);
         ew.exportCheckWord(results, document, "expWordTest.docx");
@@ -44,7 +44,7 @@ public class Main {
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setUrl(pro.getProperty("url"));
         druidDataSource.setUsername(pro.getProperty("username"));
-        druidDataSource.setPassword(pro.getProperty("pass"));
+        druidDataSource.setPassword(pro.getProperty("password"));
         druidDataSource.setDriverClassName(pro.getProperty("driver"));
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(druidDataSource);
